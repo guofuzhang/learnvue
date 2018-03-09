@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="id3"><span v-if="msg">cccccc</span></div>
+<div id="id1">{{name}}</div>
+<div id="id2">
+<span v-bind:data="msg">0</span></div>
+	<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript">
+		var ab=new Vue({
+			el:'#id1',
+			data:{
+				name:'xl',
+			}
+		})
+
+
+		var a1=new Vue({
+			el:"#id2",
+			data:{
+				msg:"xxxx"+new Date().toLocaleString()
+			}
+		})
+
+
+		var a2=new Vue({
+			el:'#id3',
+			data:{
+				msg:true,
+			}
+		})
+	</script>
+</body>
+</html>
