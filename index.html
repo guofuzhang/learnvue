@@ -9,14 +9,44 @@
 <div id="id1">{{name}}</div>
 <div id="id2">
 <span v-bind:data="msg">0</span></div>
+<div id="a3">
+	<span v-for="todo in todos">
+		{{todo.text}}<br>
+	</span>
+</div>
+<div id="a4">
+	<span>{{msg}}</span>
+	<input  v-model="msg">
+</div>
+
+
+<div id="a8">
+	{{a}}
+</div>
+<div id="a9">
+	<button v-on="n+=1">add 1</button>
+	<p> this is {{n}}</p>
+</div>
+
 	<script type="text/javascript" src="vue.js"></script>
 	<script type="text/javascript">
-		var ab=new Vue({
-			el:'#id1',
+		var a9=new Vue({
+			el:'#a9',
 			data:{
-				name:'xl',
+			    n:0
 			}
-		})
+		});
+
+
+		var data={a:1};
+		var vm =new Vue({
+			el:'#a8',
+			data:data,
+		});
+
+//        console.log(vm.a == data.a);
+	vm.a=56;
+
 
 
 		var a1=new Vue({
@@ -31,6 +61,25 @@
 			el:'#id3',
 			data:{
 				msg:true,
+			}
+		})
+
+		var  a3=new Vue({
+			el:"#a3",
+			data:{
+				todos:[
+				{text:'chi'},
+				{text:'he'},
+
+				]
+			}
+		})
+		// Vue 还提供了 v-model 指令，它能轻松实现表单输入和应用状态之间的双向绑定。
+
+		var a4=new Vue({
+			el:'#a4',
+			data:{
+				msg:'i am a4',
 			}
 		})
 	</script>
